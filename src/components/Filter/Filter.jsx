@@ -1,16 +1,22 @@
 import styles from './Filter.module.css';
+import PropTypes from 'prop-types';
 
-const Filter = ({ filter, onChange }) => {
+const Filter = ({ filter, onFilter }) => {
   return (
     <input
       className={styles.filter}
       type="text"
       name="filter"
       value={filter}
-      onChange={({ target }) => onChange(target.value)}
+      onChange={onFilter}
       placeholder="Enter name for Search"
     />
   );
+};
+
+Filter.propTypes = {
+  onSufilterbmit: PropTypes.string,
+  onChange: PropTypes.func,
 };
 
 export default Filter;
